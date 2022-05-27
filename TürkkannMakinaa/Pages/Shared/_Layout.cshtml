@@ -1,0 +1,152 @@
+﻿<!doctype html>
+<html class="no-js" lang="zxx">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Türkan Makine</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- <link rel="manifest" href="site.webmanifest"> -->
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.png">
+    <!-- Place favicon.ico in the root directory -->
+    <!-- CSS here -->
+    <link rel="stylesheet" href="~/Admin/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/Admin/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="~/Admin/css/magnific-popup.css">
+    <link rel="stylesheet" href="~/Admin/css/font-awesome.min.css">
+    <link rel="stylesheet" href="~/Admin/css/themify-icons.css">
+    <link rel="stylesheet" href="~/Admin/css/nice-select.css">
+    <link rel="stylesheet" href="~/Admin/css/flaticon.css">
+    <link rel="stylesheet" href="~/Admin/css/gijgo.css">
+    <link rel="stylesheet" href="~/Admin/css/animate.min.css">
+    <link rel="stylesheet" href="~/Admin/css/slicknav.css">
+    <link href="~/Admin/css/LoginPages.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/Admin/css/style.css">
+    <!-- <link rel="stylesheet" href="~/Admin/css/responsive.css"> -->
+
+    @RenderSection("styles", required: false)
+
+</head>
+
+<body>
+    <!--[if lte IE 9]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+        <![endif]-->
+    <!-- header-start -->
+    <header>
+        <div class="header-area ">
+            <div id="sticky-header" class="main-header-area">
+                <div class="container">
+                    <div class="header_bottom_border">
+                        <div class="row align-items-center">
+                            <div class="col-xl-6 col-lg-2">
+                                <div class="logo">
+                                    <a href="/Index">
+                                        <img src="~/Admin/img/logo.png" alt="">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-xl-6 col-lg-7">
+                                <div class="main-menu  d-none d-lg-block">
+                                    <nav>
+                                        <ul id="navigation">
+                                            <li><a href="/Index">Ana Sayfa</a></li>
+                                            <app-category-list-view></app-category-list-view>
+                                            <li><a href="/Contact/Contact">İletişim</a></li>
+                                            @*<li><a href="/About/About">Hizmetlerimiz</a></li>*@
+                                            <li><vc:authenticated-user-menu></vc:authenticated-user-menu> </li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="mobile_menu d-block d-lg-none"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </header>
+    <div style="height: 100px;background:#001D38;width:100%">
+
+    </div>
+    <!-- header-end -->
+
+
+
+    <div>
+        @RenderBody()
+    </div>
+
+
+
+
+    <!-- footer start -->
+    <footer class="footer">
+        <div class="footer_top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <img src="~/Admin/img/logo.png" alt="" style="margin-bottom: 30px;">
+                        <div>
+                            @*<a class="boxed-btn3" href="/Auth/Login">Giriş</a>*@
+                        </div>
+                    </div>
+                    <div class="col-xl-6 col-md- col-lg-6">
+                        <div class="footer_widget wow fadeInUp" data-wow-duration="1s" data-wow-delay=".3s">
+                            <p>
+                            <p><span style="color: aliceblue; font-size: 20px;">E-Mail : &nbsp;</span> <span style="font-size: 17px;"> ekremzorlu69@gmail.com </span> </p><br>
+                            <p><span style="color: aliceblue; font-size: 20px;">Telefon : &nbsp; </span> <span style="font-size:17px;"> 0(532) 391 6030 </span> </p><br>
+                            <p><span style="color: aliceblue; font-size: 20px;">Sabit Telefon : &nbsp; </span> <span style="font-size: 17px;"> 0(212) 613 8991 </span> </p><br>
+                            <p>
+                                <span style="color: aliceblue; font-size: 20px;">Adres : &nbsp; </span> <span style="font-size: 17px;"> Vatan Mahallesi Ar sokak No:26/37 Güldallar 11 Sanayi Sitesi İstanbul/Bayrampaşa</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+    <!--/ footer end  -->
+    <!-- link that opens popup -->
+    <!-- JS here -->
+    <script src="~/Admin/js/vendor/modernizr-3.5.0.min.js"></script>
+    <script src="~/Admin/js/vendor/jquery-1.12.4.min.js"></script>
+    <script src="~/Admin/js/popper.min.js"></script>
+    <script src="~/Admin/js/bootstrap.min.js"></script>
+    <script src="~/Admin/js/owl.carousel.min.js"></script>
+    <script src="~/Admin/js/isotope.pkgd.min.js"></script>
+    <script src="~/Admin/js/ajax-form.js"></script>
+    <script src="~/Admin/js/waypoints.min.js"></script>
+    <script src="~/Admin/js/jquery.counterup.min.js"></script>
+    <script src="~/Admin/js/imagesloaded.pkgd.min.js"></script>
+    <script src="~/Admin/js/scrollIt.js"></script>
+    <script src="~/Admin/js/jquery.scrollUp.min.js"></script>
+    <script src="~/Admin/js/wow.min.js"></script>
+    <script src="~/Admin/js/nice-select.min.js"></script>
+    <script src="~/Admin/js/jquery.slicknav.min.js"></script>
+    <script src="~/Admin/js/jquery.magnific-popup.min.js"></script>
+    <script src="~/Admin/js/plugins.js"></script>
+    <script src="~/Admin/js/gijgo.min.js"></script>
+
+
+
+    <!--contact js-->
+    <script src="~/Admin/js/contact.js"></script>
+    <script src="~/Admin/js/jquery.ajaxchimp.min.js"></script>
+    <script src="~/Admin/js/jquery.form.js"></script>
+    <script src="~/Admin/js/jquery.validate.min.js"></script>
+    <script src="~/Admin/js/mail-script.js"></script>
+
+
+    <script src="~/Admin/js/main.js"></script>
+
+    @RenderSection("scripts", required: false)
+</body>
+
+</html>

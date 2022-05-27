@@ -1,0 +1,15 @@
+﻿@page
+@model TürkkannMakinaa.Areas.Admin.Page.Categories.CreateModel
+@{
+}
+
+
+<div>@ViewData["Message"]</div>
+
+<form method="post">
+    <input type="text" class="form-control" asp-for="Category.CategoryName" placeholder="Kategori Adı" />
+    <br />
+    <textarea class="form-control" asp-for="Category.Description" placeholder="Açıklama"></textarea>
+    <br />
+    <button class="btn btn-success" asp-page-handler="Create">Create</button>
+</form>

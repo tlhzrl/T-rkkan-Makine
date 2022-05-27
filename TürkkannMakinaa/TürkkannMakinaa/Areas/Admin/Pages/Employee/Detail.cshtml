@@ -1,0 +1,28 @@
+﻿@page "{id}"
+@model TürkkannMakinaa.Areas.Admin.Pages.Employee.DetailModel
+@{
+}
+<table class="table table-bordered table-striped" style="width:100%">
+    <thead>
+        <tr>
+            <th>Müşteri adı</th>
+            <th>Müşteri soyadı</th>
+            <th>E-Mail</th>
+            <th>Adres</th>
+            <th>Telefon numarası</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr>
+            <td>@Model.Employee.CustomerName</td>
+            <td>@Model.Employee.CustomerSurname</td>
+            <td>@Model.Employee.CustomerEMail</td>
+            <td>@Model.Employee.CustomerAddress</td>
+            <td>@Model.Employee.PhoneNumber</td>
+        </tr>
+
+        
+    </tbody>
+
+</table>

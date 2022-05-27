@@ -1,0 +1,163 @@
+﻿@page
+@model TürkkannMakinaa.Areas.Admin.Pages.Products.ListModel
+@{
+}
+<div style=""></div>
+<div>@TempData["Message"]</div>
+
+@(Html
+
+    .Grid(Model.ProductList)
+    .Build(columns =>
+    {
+        columns.Add(model => model.UnitPrice).Titled("Fiyatı");
+        columns.Add(model => model.Name).Titled("Kategori Adı");
+
+        columns.Add(model => model.Currency).Titled("Para Birimi");
+        columns.Add(model => model.MainPhoto).Titled("Fotoğrafı")
+        .Encoded(false).RenderedAs(model => "<img style='max-height:76px;min-height:75px;max-width:51px;min-width:50px' src='data:image/jpeg;base64," + model.MainPhoto + "'/>").Sortable(false).Filterable(false);
+        columns.Add(model => model.MainPhoto).Titled("Action")
+        .Encoded(false).RenderedAs(model => $"<a class='btn btn-warning' href='/Admin/Products/Delete/{model.Id}'>Sil</a>").Sortable(false).Filterable(false);
+
+        columns.Add(model => model.MainPhoto).Titled("Action")
+                    .Encoded(false).RenderedAs(model => $"<a class='btn btn-primary' href='#AddPhotoModal_{model.Id}' data-toggle='modal'>Fotograf Ekle</a>").Sortable(false).Filterable(false);
+        columns.Add(model => model.MainPhoto).Titled("Action")
+                    .Encoded(false).RenderedAs(model => $"<a class='btn btn-primary' href='#EditPhotoModal_{model.Id}' data-toggle='modal'>Fotograf Güncelle</a>").Sortable(false).Filterable(false);
+        columns.Add(model => model.MainPhoto).Titled("Action")
+                    .Encoded(false).RenderedAs(model => $"<a class='btn btn-primary' href='/Admin/Products/Edit/{model.Id}' data-toggle='modal'>Ürün Güncelle</a>").Sortable(false).Filterable(false);
+
+    })
+    .Empty("No data found")
+    .Filterable()
+    .Sortable()
+    .Pageable(pager => { pager.PagesToDisplay = 10; })
+
+
+)
+
+
+@foreach (var item in Model.ProductList)
+{
+    <div id="AddPhotoModal_@item.Id" class="modal fade" role="dialog">
+
+        <div class="modal-dialog">
+
+            Modal content
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">@item.Name - Fotoğrafları</h4>
+                </div>
+                <div class="modal-body">
+
+
+
+                    <form method="post" enctype="multipart/form-data">
+
+                        @{
+                            Model.SelectedProductId = item.Id;
+                        }
+
+                        <div>
+                            <input type="hidden" asp-for="SelectedProductId" />
+                            &nbsp;&nbsp;&nbsp;
+
+                        </div>
+
+                        <div class="form-group">
+                            <input multiple asp-for="files" type="file" class="form-control">
+                        </div>
+
+                        <button asp-page-handler="AddPhotos" type="submit" class="btn btn-success"><i class="fa fa-save">Kaydet</i></button>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+}
+
+
+
+
+@foreach (var item in Model.ProductList)
+{
+    <div id="EditPhotoModal_@item.Id" class="modal fade" role="dialog">
+
+        <div class="modal-dialog">
+
+            Modal content
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">@item.Name - Fotoğrafları</h4>
+                </div>
+                <div class="modal-body">
+
+
+                    <div>
+                        @foreach (var photo_item in item.Photos)
+                        {
+                            <span id="img_@photo_item.Id">
+                                <img style="width:100px;height:100px; margin-bottom:20px;" src="@photo_item.FileUrl" />
+                                @*<button >Delete</button>*@
+                                <a  onclick="Delete('@photo_item.Id')" href="javascript:void(0);"> <img src="~/Admin/img/svg_icon/close.png" style="width:20px; text-decoration:none;" /> </a>
+                            </span>
+
+                        }
+                    </div>
+
+
+                    <form method="post" enctype="multipart/form-data">
+
+                        @{
+                            Model.SelectedProductId = item.Id;
+                        }
+
+                        <div>
+                            <input type="hidden" asp-for="SelectedProductId" />
+                            &nbsp;&nbsp;&nbsp;
+
+                        </div>
+
+                        <div class="form-group">
+                            <input multiple asp-for="files" type="file" class="form-control">
+                        </div>
+
+                        <button asp-page-handler="AddPhotos" type="submit" class="btn btn-success"><i class="fa fa-save">Kaydet</i></button>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+}
+
+@section scripts {
+
+    <script>
+        function Delete(photo_id) {
+
+            $.ajax({
+                url: '/Product/DeletePhoto/' + photo_id,
+                method: 'GET',
+                success: function (response) {
+                    alert(response);
+                    $('#img_' + photo_id).fadeOut();
+
+                },
+                error: function (err) {
+                    console.log(err);
+                }
+            })
+            //ajax
+            //alert(photo_id);
+        }
+    </script>
+}

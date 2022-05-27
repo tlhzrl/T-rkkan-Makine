@@ -1,0 +1,80 @@
+﻿@page
+@model TürkkannMakinaa.Areas.Admin.Pages.Products.ListModel
+@{
+}
+<div style=""></div>
+<div>@TempData["Message"]</div>
+
+@(Html
+
+    .Grid(Model.ProductList)
+    .Build(columns =>
+    {
+        columns.Add(model => model.UnitPrice).Titled("Fiyatı");
+        columns.Add(model => model.Name).Titled("Kategori Adı");
+
+        columns.Add(model => model.Currency).Titled("Para Birimi");
+        columns.Add(model => model.MainPhoto).Titled("Fotoğrafı")
+        .Encoded(false).RenderedAs(model => "<img style='max-height:76px;min-height:75px;max-width:51px;min-width:50px' src='data:image/jpeg;base64," + model.MainPhoto + "'/>").Sortable(false).Filterable(false);
+        columns.Add(model => model.MainPhoto).Titled("Action")
+        .Encoded(false).RenderedAs(model => $"<a class='btn btn-info' href='/Product/Detail/{model.Id}'>Detay</a>").Sortable(false).Filterable(false);
+
+        columns.Add(model => model.MainPhoto).Titled("Action")
+                    .Encoded(false).RenderedAs(model => $"<a class='btn btn-primary' href='#AddPhotoModal_{model.Id}' data-toggle='modal'>Fotograf Ekle</a>").Sortable(false).Filterable(false);
+
+        columns.Add(model => model.MainPhoto).Titled("Action")
+                    .Encoded(false).RenderedAs(model => $"<a class='btn btn-primary' href='/Admin/Products/Edit/{model.Id}' data-toggle='modal'>Ürün Güncelle</a>").Sortable(false).Filterable(false);
+
+    })
+    .Empty("No data found")
+    .Filterable()
+    .Sortable()
+    .Pageable(pager => { pager.PagesToDisplay = 10; })
+
+
+)
+
+
+@foreach (var item in Model.ProductList)
+{
+    <div id="AddPhotoModal_@item.Id" class="modal fade" role="dialog">
+
+        <div class="modal-dialog">
+
+            Modal content
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">@item.Name - Fotoğrafları</h4>
+                </div>
+                <div class="modal-body">
+
+
+
+                    <form method="post" enctype="multipart/form-data">
+
+                        @{
+                            Model.SelectedProductId = item.Id;
+                        }
+
+                        <div>
+                            <input type="hidden" asp-for="SelectedProductId" />
+                            &nbsp;&nbsp;&nbsp;
+                            <button asp-page=""></button>
+                        </div>
+
+                        <div class="form-group">
+                            <input multiple asp-for="files" type="file" class="form-control">
+                        </div>
+
+                        <button asp-page-handler="AddPhotos" type="submit" class="btn btn-success"><i class="fa fa-save">Kaydet</i></button>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+}

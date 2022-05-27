@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29613.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TürkkannMakinaa", "TürkkannMakinaa\TürkkannMakinaa.csproj", "{800A5DAB-70F2-401A-A561-0235C1E472F9}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TurkkanMakineTagHelpers", "TurkkanMakineTagHelpers\TurkkanMakineTagHelpers.csproj", "{694B766E-4024-46C4-ACBD-5767AC4011E1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{800A5DAB-70F2-401A-A561-0235C1E472F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{800A5DAB-70F2-401A-A561-0235C1E472F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{800A5DAB-70F2-401A-A561-0235C1E472F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{800A5DAB-70F2-401A-A561-0235C1E472F9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{694B766E-4024-46C4-ACBD-5767AC4011E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{694B766E-4024-46C4-ACBD-5767AC4011E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{694B766E-4024-46C4-ACBD-5767AC4011E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{694B766E-4024-46C4-ACBD-5767AC4011E1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0922ADFE-A478-4D1F-A6FF-0B4F1878CC63}
+	EndGlobalSection
+EndGlobal

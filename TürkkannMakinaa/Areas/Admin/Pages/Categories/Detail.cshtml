@@ -1,0 +1,48 @@
+﻿@page "{id}"
+@model TürkkannMakinaa.Areas.Admin.Page.Categories.DetailModel
+@{
+}
+<table class="table table-bordered table-striped" style="width:100%">
+
+    <thead>
+        <tr>
+            <td>Kategori adı</td>
+            <td>Kategori açıklaması</td>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr>
+            <td>@Model.Category.CategoryName</td>
+            <td>@Model.Category.Description</td>
+            
+        </tr>
+    </tbody>
+</table>
+
+
+
+@*<div class="row">
+        <div class="col-md-12">
+            <div class="col-md-4">
+                Kategori Adı:
+            </div>
+
+            <div class="col-md-8">
+                @Model.Category.CategoryName
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="col-md-4">
+                Kategori Açıklaması:
+            </div>
+
+            <div class="col-md-8">
+                @Model.Category.Description
+            </div>
+        </div>
+
+    </div>*@

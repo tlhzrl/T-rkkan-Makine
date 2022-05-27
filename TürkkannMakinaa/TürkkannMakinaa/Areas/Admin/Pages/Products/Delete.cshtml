@@ -1,0 +1,12 @@
+﻿@page "{id}"
+@model TürkkannMakinaa.Areas.Admin.Pages.Products.DeleteModel
+@{
+}
+<h3>Bu kaydı silmek istediğine emin misin?</h3>
+
+<form method="post">
+    <button class="btn btn-warning " asp-page-handler="Delete" asp-route-id="@Model.Id" style="width:70px; height:auto;" >Sil</button>
+    <a class="btn btn-success" asp-area="Admin" asp-page="List">Listeye geri dön</a>
+
+    @*<a class="btn btn-primary" asp-area="Admin" asp-page="List">Listeye geri dön</a>*@
+</form>

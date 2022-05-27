@@ -1,0 +1,46 @@
+﻿@page "{id}"
+@model TürkkannMakinaa.Areas.Admin.Pages.Products.EditModel
+@{
+}
+
+<div></div>
+<br />
+<br />
+<form method="post">
+    <input type="hidden" asp-for="Product.Id" />
+
+    @*<input type="hidden" asp-for="Product.MainPhoto" />*@
+
+
+    <input type="text" class="form-control" asp-for="Product.Name" placeholder="Ürün Adı" />
+    <br />
+    <textarea class="form-control" asp-for="Product.Notes"  placeholder="Not"></textarea>
+    <br />
+    <textarea class="form-control" asp-for="Product.Properties" id="summernote" placeholder="Açıklama"></textarea>
+    <br />
+    <textarea class="form-control" asp-for="Product.Stock" placeholder="Stok"></textarea>
+    <br />
+    <textarea class="form-control" asp-for="Product.UnitPrice" placeholder="Fiyat"></textarea>
+    <br />
+    <textarea class="form-control hidden" asp-for="Product.MainPhoto" placeholder="Ana resim"></textarea>
+    <br />
+    @*@foreach (var item in Model.Product.Photos)
+    {
+
+        <a href="~/site/images/b576d0b4-fe2c-4489-a417-7f7102b56e15.jpg" data-lightbox="roadtrip"><img style="max-height:50px;max-width:50px;" src="~/site/images/b576d0b4-fe2c-4489-a417-7f7102b56e15.jpg" /></a>
+
+
+
+        <span style="width:60px; height:60px; display:inline-block; border:1px solid gray">
+                <img class="img-thumbnail" style="height:100px; width:100px;" src="@item.FileUrl"/>
+                <a href="@item.FileUrl" data-lightbox="roadtrip"><img style="max-height:50px;max-width:50px;" src="@item.FileUrl" /></a>
+
+            </span>
+        <textarea class="form-control" asp-for="Product.Photos" placeholder="Resimler"></textarea>
+
+    }*@
+    <br />
+    <button class="btn btn-primary" asp-page-handler="Update">Güncelle</button>
+    <a class="btn btn-primary" asp-area="Admin" asp-page="list">Listeye geri dön</a>
+</form>
+@*<img style='width:75px;height:50px;' src='data:image/jpeg;base64," + Product.MainPhoto + "' />"*@

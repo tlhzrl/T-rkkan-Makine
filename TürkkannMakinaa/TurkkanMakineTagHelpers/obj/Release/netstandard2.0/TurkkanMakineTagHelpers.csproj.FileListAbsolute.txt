@@ -1,0 +1,8 @@
+C:\Users\muham\OneDrive\Masaüstü\TürkkannMakinaa\TürkkannMakinaa\TurkkanMakineTagHelpers\bin\Release\netstandard2.0\TurkkanMakineTagHelpers.deps.json
+C:\Users\muham\OneDrive\Masaüstü\TürkkannMakinaa\TürkkannMakinaa\TurkkanMakineTagHelpers\bin\Release\netstandard2.0\TurkkanMakineTagHelpers.dll
+C:\Users\muham\OneDrive\Masaüstü\TürkkannMakinaa\TürkkannMakinaa\TurkkanMakineTagHelpers\bin\Release\netstandard2.0\TurkkanMakineTagHelpers.pdb
+C:\Users\muham\OneDrive\Masaüstü\TürkkannMakinaa\TürkkannMakinaa\TurkkanMakineTagHelpers\obj\Release\netstandard2.0\TurkkanMakineTagHelpers.csprojAssemblyReference.cache
+C:\Users\muham\OneDrive\Masaüstü\TürkkannMakinaa\TürkkannMakinaa\TurkkanMakineTagHelpers\obj\Release\netstandard2.0\TurkkanMakineTagHelpers.AssemblyInfoInputs.cache
+C:\Users\muham\OneDrive\Masaüstü\TürkkannMakinaa\TürkkannMakinaa\TurkkanMakineTagHelpers\obj\Release\netstandard2.0\TurkkanMakineTagHelpers.AssemblyInfo.cs
+C:\Users\muham\OneDrive\Masaüstü\TürkkannMakinaa\TürkkannMakinaa\TurkkanMakineTagHelpers\obj\Release\netstandard2.0\TurkkanMakineTagHelpers.dll
+C:\Users\muham\OneDrive\Masaüstü\TürkkannMakinaa\TürkkannMakinaa\TurkkanMakineTagHelpers\obj\Release\netstandard2.0\TurkkanMakineTagHelpers.pdb

@@ -1,0 +1,19 @@
+﻿@using TürkkannMakinaa.Model
+@model AuthenticatedUserVM
+
+
+@if (!Model.Authenticated)
+{//<a class="boxed-btn3" href="/Auth/Login">Giriş</a>
+    <a asp-page="/Auth/Login"><span class="glyphicon glyphicon-log-in"></span>Oturum Aç</a>
+    //<a class="" asp-page="/Auth/LogOut">Çıkış Yap</a>
+}
+else
+{
+
+    <a href="#"> @Model.UserName<i class="ti-angle-down"></i></a>
+    <ul class="submenu">
+        <li><a class="dropdown-item" asp-area="Admin" asp-page="/Products/Create">Yönetici Paneli</a></li>
+        
+        <li><a class="dropdown-item" asp-page="/Auth/LogOut">Çıkış Yap</a></li>
+    </ul>
+}

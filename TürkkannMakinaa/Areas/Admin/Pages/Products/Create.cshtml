@@ -1,0 +1,159 @@
+﻿@page
+@model TürkkannMakinaa.Areas.Admin.Page.Products.CreateModel
+@{
+
+}
+
+
+
+<div class="card" style="margin-top:10%">
+    <div class="card-body">
+
+        <div>
+
+            @if (ViewBag.Succeded != null)
+            {
+                if (ViewBag.Succeded)
+                {
+                    <span class="text-success"> @ViewBag.Message</span>
+                }
+                else
+                {
+                    <span class="text-danger"> @ViewBag.Message</span>
+                }
+
+            }
+
+
+        </div>
+
+
+        <form method="post" enctype="multipart/form-data">
+
+            <div class="row">
+                <div class="col-md-4">
+                    <label>Ürün Adı:</label>
+                </div>
+                <div class="col-md-8">
+                    <input type="text" asp-for="Products.Name" class="form-control" />
+                    <span class="text-danger" asp-validation-for="Products.Name"></span>
+                </div>
+            </div>
+
+            <br />
+
+
+            <div class="row">
+                <div class="col-md-4">
+                    <label>Kategori:</label>
+                </div>
+                <div class="col-md-8">
+                    <select class="form-control" asp-for="Products.CategoryID" asp-items="@ViewBag.Categories"></select>
+                    <span class="text-danger" asp-validation-for="Products.CategoryID"></span>
+                </div>
+            </div>
+
+            <br />
+
+            <div class="row">
+                <div class="col-md-4">
+                    <label>Para Birimi:</label>
+                </div>
+                <div class="col-md-8">
+
+
+                    <currency-selector model-for="Products.Currency"></currency-selector>
+
+                    <span class="text-danger" asp-validation-for="Products.Currency"></span>
+                </div>
+            </div>
+
+            <br />
+
+            <div class="row">
+                <div class="col-md-4">
+                    <label>Birim Fiyat:</label>
+                </div>
+                <div class="col-md-8">
+                    <input class="form-control" type="number" asp-for="Products.UnitPrice" />
+                    <span class="text-danger" asp-validation-for="Products.UnitPrice"></span>
+                </div>
+            </div>
+
+            <br />
+
+            <div class="row">
+                <div class="col-md-4">
+                    <label>Stok Miktarı:</label>
+                </div>
+                <div class="col-md-8">
+                    <input class="form-control" type="number" asp-for="Products.Stock" />
+                    <span class="text-danger" asp-validation-for="Products.Stock"></span>
+                </div>
+            </div>
+
+            <br />
+
+            <div class="row">
+                <div class="col-md-4">
+                    <label>Not:</label>
+                </div>
+                <div class="col-md-8">
+                    <textarea class="form-control" rows="3" asp-for="Products.Notes"></textarea>
+                </div>
+            </div>
+
+
+            <br />
+
+
+            <div class="row">
+                <div class="col-md-4">
+                    <label>Açıklama:</label>
+                </div>
+                <div class="col-md-8">
+
+                    <textarea id="summernote" asp-for="Products.Properties"></textarea>
+                </div>
+            </div>
+
+            <br />
+
+            <div class="row">
+                <div class="col-md-4">
+                    <label>Foto:</label>
+                </div>
+                <div class="col-md-8">
+
+                    <input type="file" accept="image/*" asp-for="File" multiple/>
+                    @*<input type="text" asp-for="Product.MainPhoto" />*@
+
+                    @if (Model.Products.MainPhoto == "")
+                    {
+                        <span class="text-danger" asp-validation-for="Products.MainPhoto"></span>
+                    }
+
+
+                </div>
+            </div>
+
+            <br />
+
+
+            <div class="row">
+                <div class="col-md-12">
+                    <button class="btn btn-success pull-right" asp-page-handler="Create">
+                        <i class="fa fa-save"></i>
+                        Kaydet
+                    </button>
+                </div>
+
+            </div>
+
+
+        </form>
+
+    </div>
+</div>
+
+

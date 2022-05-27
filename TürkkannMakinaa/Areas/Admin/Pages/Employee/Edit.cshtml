@@ -1,0 +1,25 @@
+﻿@page "{id}"
+@model TürkkannMakinaa.Areas.Admin.Pages.Employee.EditModel
+@{
+}
+
+<div>@ViewData["Message"]</div>
+
+<form method="post">
+    <input type="hidden" asp-for="Employee.ID" />
+    <textarea class="form-control" asp-for="Employee.CustomerName" placeholder="Müşteri adı"> </textarea>
+    <br />
+    <textarea class="form-control" asp-for="Employee.CustomerSurname" placeholder="Müşteri Soyadı"></textarea>
+    <br />
+    <textarea class="form-control" asp-for="Employee.CustomerEMail" placeholder="Müşteri Email adresi"></textarea>
+    <br />
+    <textarea class="form-control" asp-for="Employee.CustomerAddress" placeholder="Müşteri Adresi"></textarea>
+    <br />
+    <textarea class="form-control" asp-for="Employee.PhoneNumber" placeholder="Müşteri Telefonu"></textarea>
+    <br />
+    <button class="btn btn-success" asp-page-handler="Update">Güncelle</button>
+    <a class="btn btn-primary" asp-area="Admin" asp-page="List">Liste</a>
+</form>
+
+
+

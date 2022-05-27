@@ -1,0 +1,65 @@
+﻿@page
+@model TürkkannMakinaa.LoginModel
+@{
+    ViewData["Title"] = "Login";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!-- Include the above in your HEAD tag -->
+
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+<div class="main">
+    <div class="container-fluid">
+        <center>
+
+            <div class="middle">
+                <div id="login">
+
+                    <form method="post">
+
+                        <fieldset class="clearfix">
+                            <div class="text-danger">@ViewBag.ErrorMessage</div>
+                            <p><span class="fa fa-user"></span><input Placeholder="Username" asp-for="LoginİnputModel.Email" type="text" required></p> <!-- JS because of IE support; better: placeholder="Username" -->
+                            <p><span class="fa fa-lock"></span><input type="password" asp-for="LoginİnputModel.Password" Placeholder="Password" required></p> <!-- JS because of IE support; better: placeholder="Password" -->
+
+                            <div class="checkbox" style="float:left">
+
+                                <label style="display:flex;  justify-content:flex-start; ">
+                                    <input asp-for="LoginİnputModel.RememberMe" type="checkbox" style=" -webkit-appearance: checkbox;     margin: -14px; "> <span style="color:white; margin:0px; float:left">Beni Hatırla</span>
+                                </label>
+
+                            </div>
+
+                            <div style="float:right;">
+                                <span><input asp-page-handler="Login" type="submit" value="Giriş yap"></span>
+                            </div>
+
+                        </fieldset>
+
+                        <div class="clearfix"></div>
+                    </form>
+                    <div class="clearfix"></div>
+
+                </div> <!-- end login -->
+                <div class="logo">
+                    <img src="~/Admin/img/svg_icon/turkkanaaa.png" style="width: 224px; height: 140px; margin-left: 73px;">
+
+                    <div class="clearfix"></div>
+                </div>
+
+            </div>
+
+        </center>
+    </div>
+
+</div>
+

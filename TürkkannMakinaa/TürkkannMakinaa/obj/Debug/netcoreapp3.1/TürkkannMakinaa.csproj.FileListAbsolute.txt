@@ -1,0 +1,5 @@
+C:\Users\muham\OneDrive\Masaüstü\TürkkannMakinaa\TürkkannMakinaa\TürkkannMakinaa\obj\Debug\netcoreapp3.1\TürkkannMakinaa.csprojAssemblyReference.cache
+C:\Users\muham\OneDrive\Masaüstü\TürkkannMakinaa\TürkkannMakinaa\TürkkannMakinaa\obj\Debug\netcoreapp3.1\TürkkannMakinaa.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\muham\OneDrive\Masaüstü\TürkkannMakinaa\TürkkannMakinaa\TürkkannMakinaa\obj\Debug\netcoreapp3.1\TürkkannMakinaa.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\muham\OneDrive\Masaüstü\TürkkannMakinaa\TürkkannMakinaa\TürkkannMakinaa\obj\Debug\netcoreapp3.1\TürkkannMakinaa.AssemblyInfoInputs.cache
+C:\Users\muham\OneDrive\Masaüstü\TürkkannMakinaa\TürkkannMakinaa\TürkkannMakinaa\obj\Debug\netcoreapp3.1\TürkkannMakinaa.AssemblyInfo.cs

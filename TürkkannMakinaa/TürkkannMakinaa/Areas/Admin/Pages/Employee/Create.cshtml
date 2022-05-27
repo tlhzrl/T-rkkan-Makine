@@ -1,0 +1,19 @@
+﻿@page
+@model TürkkannMakinaa.Areas.Admin.Page.Employee.CreateModel
+@{
+}
+<div>@ViewData["Message"]</div>
+
+<form method="post">
+    <input type="text" class="form-control" asp-for="Employee.CustomerName" placeholder="Müşteri Adı" />
+    <br />
+    <input type="text" class="form-control" asp-for="Employee.CustomerSurname" placeholder="Müşteri Soyadı" />
+    <br />
+    <input type="email" class="form-control" asp-for="Employee.CustomerEMail" placeholder="Müşteri E-mail" />
+    <br />
+    <input type="text" class="form-control" asp-for="Employee.CustomerAddress" placeholder="Müşteri Adresi" />
+    <br />
+    <input type="number" class="form-control" asp-for="Employee.PhoneNumber" placeholder="Müşteri telefon numarası" />
+    <br />
+    <button class="btn btn-success" asp-page-handler="Create">Müşteri ekle</button>
+</form>

@@ -1,0 +1,32 @@
+﻿@page
+@model TürkkannMakinaa.Areas.Admin.Pages.Employee.ListModel
+@{
+}
+
+
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>Menü</th>
+            <th>Müşteri-şirket adı</th>
+            <th>Müşteri E-mail</th>
+            <th>Müşteri telefon numarası</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Employee)
+        {
+            <tr>
+                <td>
+                    <a class="btn btn-info" asp-area="Admin" asp-page="Edit" asp-route-id="@item.ID">Düzenle</a>
+                    <a class="btn btn-info" asp-area="Admin" asp-page="Delete" asp-route-id="@item.ID">Sil</a>
+                    <a class="btn btn-info" asp-area="Admin" asp-page="Detail" asp-route-id="@item.ID">Detay</a>
+                </td>
+               
+                <td>@item.CustomerName</td>
+                <td>@item.CustomerEMail</td>
+                <td>@item.PhoneNumber</td>
+            </tr>
+        }
+    </tbody>
+</table>

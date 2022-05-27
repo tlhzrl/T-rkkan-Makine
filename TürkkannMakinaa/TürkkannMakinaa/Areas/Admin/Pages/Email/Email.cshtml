@@ -1,0 +1,130 @@
+﻿@page
+@model TürkkannMakinaa.Areas.Admin.Pages.Email.EmailModel
+@{
+}
+
+
+    <div class="col-8">
+        <div id="liste">
+        </div>
+       
+        <form method="post" enctype="multipart/form-data">
+            <div id="mails"></div>
+            <div>
+
+                @{string[] dizi = new string[] { "asd", "asdas" }; }
+                @*<input asp-for="MailModel.Dizi" />*@
+
+
+                <div class="all">
+                    <select class="select2" multiple id="my-select" asp-for="MailModel.Mails">
+                        @foreach (var item in Model.Employee)
+                        {
+                            <option value="@item.CustomerEMail">@item.CustomerEMail</option>
+                        }
+                    </select>
+                </div>
+
+
+                <div class="all">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="">KONU</span>
+                    </div>
+                    <input type="text" class="form-control" asp-for="MailModel.Subject" />
+                </div>
+
+
+                <div class="all">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="">MAİL İÇERİK</span>
+                    </div>
+                    <textarea asp-for="MailModel.Body" class="form-control"></textarea>
+                </div>
+
+                <button asp-page-handler="SendEmail" class="btn btn-primary">Mail Gönder</button>
+            </div>
+        </form>
+    </div>
+
+
+
+<script>
+    $(document).ready(function () {
+        $('.select-all').click(function () {
+            $(this).toggleClass("selected")
+        });
+
+        $('.js-example-basic-single').select2();
+    });
+
+
+    $('.select2').select2({
+        placeholder: 'MAİL ADRESİ GİRİNİZ'
+    });
+
+    $('.select2[multiple]').siblings('.select2-container').append('<span class="select-all"></span>');
+
+    $(document).on('click', '.select-all', function (e) {
+        selectAllSelect2($(this).siblings('.selection').find('.select2-search__field'));
+    });
+
+    $(document).on("keyup", ".select2-search__field", function (e) {
+        var eventObj = window.event ? event : e;
+        if (eventObj.keyCode === 65 && eventObj.ctrlKey)
+            selectAllSelect2($(this));
+    });
+
+
+    function selectAllSelect2(that) {
+
+        var selectAll = true;
+        var existUnselected = false;
+        var id = that.parents("span[class*='select2-container']").siblings('select[multiple]').attr('id');
+        var item = $("#" + id);
+
+        item.find("option").each(function (k, v) {
+            if (!$(v).prop('selected')) {
+                existUnselected = true;
+                return false;
+            }
+        });
+
+        selectAll = existUnselected ? selectAll : !selectAll;
+
+        item.find("option").prop('selected', selectAll).trigger('change');
+    }
+</script>
+
+<style>
+
+    .all {
+        width: 100%;
+        padding: 10px 0px;
+    }
+
+    .select2-container {
+        width: 90% !important;
+    }
+
+        .select2-container .select-all {
+            position: absolute;
+            top: 6px;
+            right: 4px;
+            width:18px;
+            height:18px;
+            margin: auto;
+            display: block;
+            background-size: contain;
+            cursor: pointer;
+            z-index: 999999;
+            background-image: url('/admin/img/svg_icon/check.png');
+        }
+
+            .select2-container .select-all.selected {
+          
+                background-image: url('/admin/img/svg_icon/close.png');
+                background-size: contain;
+                width:18px;
+                height:18px;
+            }
+</style>

@@ -1,0 +1,15 @@
+﻿@page  "{categoryId}"
+@model TürkkannMakinaa.ProductModel
+@{
+    ViewData["Title"] = "Product";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+        @*@if (Model.CategoryId == null)
+        {
+            <vc:product-list></vc:product-list>
+        }
+        *@
+        
+            <vc:product-list category-id="Model.CategoryId"></vc:product-list>
+        

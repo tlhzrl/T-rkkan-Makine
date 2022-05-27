@@ -1,0 +1,133 @@
+﻿@page "{id}"
+@model TürkkannMakinaa.ProductDetailModel
+@{
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.js"></script>
+
+@section styles  {
+
+    @* bu sayfaya özgü style tanımları için kullanırız *@
+
+    <link href="~/lib/lightbox/css/lightbox.css" rel="stylesheet" />
+
+}
+<!------ Include the above in your HEAD tag ---------->
+
+<div class="container">
+
+    <div class="modal fade product-modal" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Ürünü almak istiyorsanız sizi iletişim sayfamıza yönlendiriyoruz.
+                </div>
+                <div class="modal-footer">
+                    <a class="btn btn-secondary" data-dismiss="modal">Gitme</a>
+                    <a href="http://localhost:50157/Contact/Contact" type="button" class="btn btn-primary">Git</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <br />
+    <div class="card">
+        <div class="row">
+            <aside class="col-sm-5 border-right" style="padding-right: 0px;">
+                <article class="gallery-wrap">
+                    <!-- slider-product.// -->
+
+                    <div class="fotorama" data-nav="thumbs" data-loop="true" data-allowfullscreen="true">
+
+                        @foreach (var item in Model.Product.Photos)
+                        {
+                            @*<a href="~/site/images/b576d0b4-fe2c-4489-a417-7f7102b56e15.jpg" data-lightbox="roadtrip"><img style="max-height:50px;max-width:50px;" src="~/site/images/b576d0b4-fe2c-4489-a417-7f7102b56e15.jpg" /></a>*@
+
+                            @*<a href="@item.FileUrl" data-lightbox="roadtrip">*@<img src="@item.FileUrl" class="product-image" />@*</a>*@
+
+                        }
+
+                    </div>
+
+
+                </article> <!-- gallery-wrap .end// -->
+            </aside>
+            <aside class="col-sm-7">
+                <article class="card-body p-5">
+                    <h3 class="title mb-3">@Model.Product.Name</h3>
+
+                    <p class="price-detail-wrap">
+                        <span class="price h3 text-warning">
+                            <span class="currency">@Model.Product.UnitPrice</span><span class="num">  @Model.Product.Currency</span>
+                        </span>
+
+                    </p> <!-- price-detail-wrap .// -->
+                    <dl class="item-property">
+                        <dt>Açıklama</dt>
+                        <dd>
+                            <p>
+                                @Model.Product.Notes
+                            </p>
+                        </dd>
+                    </dl>
+                    <dl class="param param-feature">
+                        <dt>Stok</dt>
+                        <dd>@Model.Product.Stock</dd>
+                    </dl>  <!-- item-property-hor .// -->
+                    <dl class="param param-feature">
+                        <dt>Özellikler</dt>
+                        <dd>@Html.Raw(@Model.Product.Properties)</dd>
+                    </dl>  <!-- item-property-hor .// -->
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <a href="#" class="btn btn-lg btn-primary text-uppercase"  type="button" data-toggle="modal" data-target="#exampleModalCenter"> Buy now </a>
+
+                </article> <!-- card-body.// -->
+            </aside> <!-- col.// -->
+        </div> <!-- row.// -->
+    </div> <!-- card.// -->
+
+</div>
+<!--container.//-->
+
+
+<br>
+<br>
+<br>
+<article class="bg-secondary mb-3">
+</article>
+
+
+@section scripts  {
+
+
+    @*<script src="~/lib/lightbox/js/lightbox.js"></script>*@
+    <script src="~/lib/lightbox/js/lightbox.js"></script>
+
+    <script>
+        lightbox.option({
+            'resizeDuration': 200,
+            'wrapAround': true,
+            'maxWidth': 400,
+            'maxHeight': 400
+        })
+
+        
+
+
+
+    </script>
+}
